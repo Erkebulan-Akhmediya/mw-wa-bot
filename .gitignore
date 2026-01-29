@@ -1,0 +1,6 @@
+.env
+waha/.env
+
+node_modules/
+dist/
+waha/sessions/
