@@ -32,7 +32,7 @@ services:
     networks:
       - mw
 
-  wa-bot:
+  mw-wa-bot:
     restart: always
     ports:
       - "2106:2106/tcp"
