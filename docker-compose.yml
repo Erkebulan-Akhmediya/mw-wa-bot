@@ -21,11 +21,30 @@ services:
 
     volumes:
       # Store sessions in the .sessions folder (comment it if you're using MongoDB)
-      - './sessions:/app/.sessions'
+      - './waha/sessions:/app/.sessions'
 
       # Save media files
       # https://waha.devlike.pro/docs/how-to/storages/#save-media-files-between-the-container-restarts
       # - './media:/app/.media'
 
     env_file:
+      - waha/.env
+    networks:
+      - mw
+
+  mw-wa-bot:
+    restart: always
+    ports:
+      - "2106:2106/tcp"
+    build:
+      context: .
+      dockerfile: Dockerfile
+    env_file:
       - .env
+      - waha/.env
+    networks:
+      - mw
+
+networks:
+  mw:
+    external: true
