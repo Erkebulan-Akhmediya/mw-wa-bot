@@ -41,6 +41,7 @@ services:
       dockerfile: Dockerfile
     env_file:
       - .env
+      - waha/.env
     networks:
       - mw
 
