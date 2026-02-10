@@ -17,7 +17,7 @@ services:
         max-file: '10'
 
     ports:
-      - '127.0.0.1:3000:3000/tcp'
+      - '3000:3000'
 
     volumes:
       # Store sessions in the .sessions folder (comment it if you're using MongoDB)
@@ -35,7 +35,7 @@ services:
   mw-wa-bot:
     restart: always
     ports:
-      - "2106:2106/tcp"
+      - "2106:2106"
     build:
       context: .
       dockerfile: Dockerfile
